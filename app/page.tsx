@@ -1,10 +1,12 @@
-import Link from "next/link";
+'use client';
+import dynamic from "next/dynamic";
+
+const Webgpu = dynamic(() => import("./boxes/webgpu"), { ssr: false });
 
 export default function Home() {
   return (
     <div className="main">
-      <Link href="/birds">Birds Example</Link>
-      <Link href="/boxes">Boxes Example</Link>
+      <Webgpu />
     </div>
   );
 }
